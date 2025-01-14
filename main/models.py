@@ -31,3 +31,17 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.user.username} : {self.post_date}"
+
+#↓29で追加(__str__部分は教科書内容を変更)
+class Comment(models.Model):
+    user = models.ForeignKey(
+        "User", on_delete=models.CASCADE, related_name="comments"
+    )
+    post = models.ForeignKey(
+        "Post", on_delete=models.CASCADE, related_name="comments"
+    )
+    text = models.CharField(max_length=150)
+    post_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"({self.user.username} → {self.post.user.username}) : {self.post_date.strftime("%Y-%m-%d %H:%M:%S")}"
