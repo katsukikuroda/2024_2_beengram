@@ -264,6 +264,13 @@ body {
     margin: 0 16px;
 }
 
+/* ↓30で追加 */
+.post__comment {
+    font-size: 32px;
+    margin: 0 16px;
+}
+/* ↑ここまで */
+
 .post__user {
     margin: 0 16px 0 auto;
 }
@@ -290,6 +297,13 @@ body {
     color: inherit;
     text-decoration: none;
 }
+
+/* ↓30で追加 */
+.post__comment a {
+    color: inherit;
+    text-decoration: none;
+}
+/* ↑ここまで */
 
 .post__user a {
     color: inherit;
